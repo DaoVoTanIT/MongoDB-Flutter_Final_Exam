@@ -163,11 +163,16 @@ class _DisplayDataState extends State<DisplayData> {
                                       ),
                                       actions: <Widget>[
                                         TextButton(
-                                            child: const Text('Xoá'),
+                                            child: const Text('No'),
                                             onPressed: () async {
                                               print(data.id);
                                               await MongoDatabase.delete(data);
                                               setState(() {});
+                                              Navigator.of(context).pop();
+                                            }),
+                                        TextButton(
+                                            child: const Text('Yes'),
+                                            onPressed: () async {
                                               Navigator.of(context).pop();
                                             })
                                       ]);
