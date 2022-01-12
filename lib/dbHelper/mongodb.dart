@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:mongo_dart/mongo_dart.dart';
 import 'package:mongodb/dbHelper/constant.dart';
-import 'package:mongodb/mongodbModel.dart';
+import 'package:mongodb/data/mongodbModel.dart';
 
 class MongoDatabase {
   static var db, userCollection;
@@ -20,12 +20,21 @@ class MongoDatabase {
 
   static Future<void> update(MongoDbModel data) async {
     var res = await userCollection.findOne({"_id": data.id});
-    res['firstName'] = data.firstName;
-    res['lastName'] = data.lastName;
-    res['phone'] = data.phone;
-    res['address'] = data.address;
+    res['title'] = data.title;
+    res['content'] = data.content;
+    //res['address'] = data.address;
     var response = await userCollection.save(res);
     inspect(response);
+  }
+
+  static Future<List<Map<String, dynamic>>> getQueryData() async {
+    final arrData =
+        await userCollection.find(where.eq("title", "Học")).toList();
+    return arrData;
+  }
+
+  static delete(MongoDbModel user) async {
+    await userCollection.remove(where.id(user.id));
   }
 
   static Future<String> insert(MongoDbModel data) async {

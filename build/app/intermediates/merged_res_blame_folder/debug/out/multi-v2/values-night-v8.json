@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macos/Downloads/mongodb/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/macos/Downloads/MongoDB-Flutter_Final_Exam/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/macos/Downloads/mongodb/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/macos/Downloads/MongoDB-Flutter_Final_Exam/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

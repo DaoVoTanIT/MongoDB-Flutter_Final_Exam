@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mongodb/dbHelper/mongodb.dart';
 import 'package:mongodb/displayData.dart';
-import 'package:mongodb/insert.dart';
-import 'package:mongodb/update.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: DisplayData(),
+      // home: ViewNotePage(),
     );
   }
 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macos/Downloads/mongodb/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/macos/Downloads/MongoDB-Flutter_Final_Exam/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/macos/.gradle/caches/transforms-2/files-2.1/5f663b08eec19eef9a9d1af662d9025e/core-1.6.0/res/values/values.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/macos/Downloads/mongodb/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/macos/Downloads/MongoDB-Flutter_Final_Exam/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
