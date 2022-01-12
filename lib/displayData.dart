@@ -4,7 +4,6 @@ import 'package:mongodb/dbHelper/mongodb.dart';
 import 'package:mongodb/insert.dart';
 import 'package:mongodb/data/mongodbModel.dart';
 import 'package:mongodb/search_widget.dart';
-
 import 'header_widget.dart';
 
 class DisplayData extends StatefulWidget {
@@ -58,8 +57,8 @@ class _DisplayDataState extends State<DisplayData> {
                         children: [
                           HeaderWidget(
                             image: "assets/memo.png",
-                            textTop: "Ghi chú!",
-                            textBottom: "${formattedDate}",
+                            textTop: "App note",
+                            textBottom: "& Writing",
                           ),
                           ListView.builder(
                               physics: NeverScrollableScrollPhysics(),

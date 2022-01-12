@@ -54,7 +54,7 @@ class HeaderWidget extends StatelessWidget {
                     left: 150,
                     child: Text("${textTop} \n${textBottom}",
                         style: TextStyle(
-                            fontSize: 22,
+                            fontSize: 25,
                             fontWeight: FontWeight.w600,
                             color: Colors.white)),
                   ),
