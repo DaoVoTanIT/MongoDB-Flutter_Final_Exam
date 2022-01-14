@@ -17,10 +17,33 @@ class _DisplayDataState extends State<DisplayData> {
   String formattedDate = DateFormat('dd-MM-yyyy').format(DateTime.now());
   TextEditingController controller = TextEditingController();
   bool descTextShowFlag = false;
+  double offset = 0;
   final scrollController = ScrollController();
   late MongoDbModel model;
-  List<MongoDbModel> _posts = <MongoDbModel>[];
   List<MongoDbModel> _listDisplay = <MongoDbModel>[];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      _listDisplay;
+    });
+    controller.addListener(onScroll);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.dispose();
+    super.dispose();
+  }
+
+  void onScroll() {
+    setState(() {
+      offset = (scrollController.hasClients) ? scrollController.offset : 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +67,7 @@ class _DisplayDataState extends State<DisplayData> {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
               return Center(
-                child: Text('Loading'),
+                child: CircularProgressIndicator(),
               );
             default:
               return !snapshot.hasData
@@ -59,6 +82,7 @@ class _DisplayDataState extends State<DisplayData> {
                             image: "assets/memo.png",
                             textTop: "App note",
                             textBottom: "& Writing",
+                            //offset: offset,
                           ),
                           ListView.builder(
                               physics: NeverScrollableScrollPhysics(),
@@ -166,13 +190,14 @@ class _DisplayDataState extends State<DisplayData> {
                                             child: const Text('No'),
                                             onPressed: () async {
                                               print(data.id);
-                                              await MongoDatabase.delete(data);
-                                              setState(() {});
                                               Navigator.of(context).pop();
                                             }),
                                         TextButton(
                                             child: const Text('Yes'),
                                             onPressed: () async {
+                                              print(data.id);
+                                              await MongoDatabase.delete(data);
+                                              setState(() {});
                                               Navigator.of(context).pop();
                                             })
                                       ]);
